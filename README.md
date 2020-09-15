@@ -27,7 +27,7 @@
 **Tecnologias:**
 
 - **Back-end:** NodeJs.
-- **Outras API/Lib:** googleapis.
+- **Outras API/Lib:** googleapis + mysql.
 
 ## Como rodar
 
@@ -70,7 +70,17 @@
   - Coloque o JSON de credencias dentro do diretório do projeto.
   - Abra no navegador a Planilha Google que você quer acessar através da API e pegue o ID dela na URL (OBS: O ID da Planilha esta depois do "**/d/**", exemplo: `https://docs.google.com/spreadsheets/d/1hwrYBeDCXxbh4OFdn5qfsA86_OnrhyhRNqzqJ7jnqBc` neste exemplo o ID da Planilha é "_1hwrYBeDCXxbh4OFdn5qfsA86_OnrhyhRNqzqJ7jnqBc_")
   - No arquivo "index.js" na linha onde esta escrito: `const googleApiKey = require('#Credenciais_de_autenticação.json');` substitua a string `#Credenciais_de_autenticação.json` pelo arquivo de credencias que você baixou.
-  - No arquivo "index.js" na linha onde esta escrito: `spreadsheetId: '#ID_da_planilha',` substitua a string `#ID_da_planilha` pelo ID da sua Planilha Google
+  - No arquivo "index.js" na linha onde esta escrito: `spreadsheetId: '#ID_da_planilha',` substitua a string `#ID_da_planilha` pelo ID da sua Planilha Google.
+    - No arquivo "index.js" alterar as linhas de conexão ao banco de dados:
+
+```
+host:  '#HOST',
+user:  '#USUARIO',
+password:  '#SENHA',
+database:  '#NOME_DA_BASE_DE_DADOS',
+```
+
+- No arquivo "index.js" nas linhas onde esta escrito: `queryColumnsNames: 'SHOW columns FROM NOME_DA_TABELA',` e `queryData: 'SELECT * FROM NOME_DA_TABELA',` substitua a string `NOME_DA_TABELA` pelo nome da tabela que você deseja pegar os dados.
 
 **Como rodar:**
 
